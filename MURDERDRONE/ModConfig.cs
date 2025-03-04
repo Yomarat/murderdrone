@@ -14,8 +14,8 @@ namespace MURDERDRONE
             this.Active = true;
             this.KeyboardShortcut = "F7";
             this.RotationSpeed = 2;
-            this.Damage = -1;
-            this.ProjectileVelocity = 16;
+            this.Damage = -100;
+            this.ProjectileVelocity = 30;
         }
     }
 }
