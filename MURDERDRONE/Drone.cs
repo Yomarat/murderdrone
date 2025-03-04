@@ -153,3 +153,19 @@ namespace MURDERDRONE
         }
     }
 }
+{
+foreach (var obj in Game1.currentLocation.terrainFeatures.Pairs)
+{
+    if (obj.Value is Tree tree && tree.growthStage.Value >= 5) // ตรวจจับต้นไม้โตเต็มที่
+    {
+        tree.performToolAction(new Axe(), 1, new Vector2(obj.Key.X, obj.Key.Y));
+    }
+}
+
+foreach (var obj in Game1.currentLocation.terrainFeatures.Pairs)
+{
+    if (obj.Value is HoeDirt dirt && dirt.crop != null) // ตรวจจับพืชที่ต้องการลดน้ำ
+    {
+        dirt.state.Value = HoeDirt.watered; // ลดน้ำให้ต้นไม้
+    }
+}
